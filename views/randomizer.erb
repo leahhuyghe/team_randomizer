@@ -6,7 +6,7 @@
 <form method="post" action="/randomizer">
   <div>
   <label for="student_names">Tell me all the names of your student body.</label>
-    <textarea name="student_names" id="student_names" placeholder="Separate names by commas"></textarea>
+    <textarea name="student_names" id="student_names" placeholder="Separate names with a comma and space"></textarea>
   </div>
   <div>
   <label for="group_number" name="group_number" id="group_number">How many groups do you want?</label>
@@ -17,9 +17,18 @@
   </div>
 </form>
 
+<% if @error_result == true %>
+<%=   "Error: You require more teams than you have students listed. Enter more students or reduce number of teams!" %>
+<% end %>
 
-<%= @error %>
-
-<%= @groups %>
+<% if @error_result == nil && session["group_num"] < session["names"].length %>
+<%    (session["group_num"]).downto(1) { |n| %>
+<%=       "Student Team" %>
+<%=       n %>
+<%=       "has members: " %>
+<%=       session[n]   %>
+<%=       ", " %> <BR>
+<%        } %>
+<% end %>
 
 </html>
