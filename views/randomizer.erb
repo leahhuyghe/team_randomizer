@@ -4,6 +4,7 @@
 <h3>Easily assign a group of students into teams</h3>
 
 <form method="post" action="/randomizer">
+<<<<<<< HEAD
  <div>
  <label for="student_names">Tell me all the names of your student body.</label>
    <textarea name="student_names" id="student_names" placeholder="Separate names with a comma and space"></textarea>
@@ -15,6 +16,19 @@
  <div>
  <input type="submit" value="Generate Groups"></input>
  </div>
+=======
+  <div>
+  <label for="student_names">Tell me all the names of your student body.</label>
+    <textarea name="student_names" id="student_names" placeholder="Separate names with a comma and space"></textarea>
+  </div>
+  <div>
+  <label for="group_number" name="group_number" id="group_number">How many groups do you want?</label>
+    <input type="number" name="group_number" id="group_number">
+  </div>
+  <div>
+  <input type="submit" value="Generate Groups"></input>
+  </div>
+>>>>>>> 46e462657580b02e3862251f04d7fe19c528945b
 </form>
 <br>
 <hr>
@@ -33,4 +47,21 @@
 <%        } %>
 <% end %>
 
+<<<<<<< HEAD
+=======
+<% if @error_result == true %>
+<%=   "Error: You require more teams than you have students listed. Enter more students or reduce number of teams!" %>
+<% end %>
+
+<% if @error_result == nil && session["group_num"] < session["names"].length %>
+<%    (session["group_num"]).downto(1) { |n| %>
+<%=       "Student Team" %>
+<%=       n %>
+<%=       "has members: " %>
+<%=       session[n]   %>
+<%=       ", " %> <BR>
+<%        } %>
+<% end %>
+
+>>>>>>> 46e462657580b02e3862251f04d7fe19c528945b
 </html>
