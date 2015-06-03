@@ -25,6 +25,10 @@ groups_generated = Hash.new
 
 #count from 1 to the number of students
 (1..@group_num).each {|group_num, names|}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7faba1b5b92503c8041d7f3415f389d8787acb73
 groups_generated = {"<%= @group_num %>" => " <%= @names.each%> "}
 
 #if the number of students is equally divisible by the number of groups...
@@ -32,6 +36,7 @@ groups_generated = {"<%= @group_num %>" => " <%= @names.each%> "}
 
 #this gives an identifier to the remaining students who are left out of the equally-sized groups.
     @remainder = @names.length % @group_num
+<<<<<<< HEAD
 
   elsif
     #if there are no remainders:
@@ -39,6 +44,15 @@ groups_generated = {"<%= @group_num %>" => " <%= @names.each%> "}
       puts "You have an equally divisible amount of students!"
 
   elsif
+=======
+
+  elsif
+    #if there are no remainders:
+       @remainder == 0
+      puts "You have an equally divisible amount of students!"
+
+  elsif
+>>>>>>> 7faba1b5b92503c8041d7f3415f389d8787acb73
     @group_num < @names.length.push(groups_generated)
 
 
